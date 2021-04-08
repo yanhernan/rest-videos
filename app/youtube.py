@@ -10,7 +10,7 @@ def search_videos(args):
     search = None
     if 'search' in args:
         search = args['search']
-    if 'pageToke' in args:
+    if 'pageToken' in args:
         pageToken = args['pageToken'] 
     os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
