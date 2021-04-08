@@ -1,0 +1,1 @@
+from .routes import initialize_routes as initialize_routes_videos
