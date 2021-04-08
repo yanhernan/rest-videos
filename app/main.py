@@ -1,10 +1,12 @@
 import os
 from flask import Flask, Blueprint
 from flask_restful import Api
+from flask_cors import CORS
 from videos import initialize_routes_videos
 from config import initialize_config
 
 app = Flask(__name__, instance_relative_config=True)
+CORS(app)
 # load config values
 initialize_config(app)
 # create route prefix
