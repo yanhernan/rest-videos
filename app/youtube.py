@@ -26,7 +26,7 @@ def search_videos(args):
         q=search,
         fields="items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,nextPageToken,prevPageToken",
         type="video",
-        pageToken=
+        pageToken=pageToken
     )
 
     response = request.execute()
