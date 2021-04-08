@@ -4,9 +4,14 @@ import googleapiclient.discovery
 from config import get_youtube_key
 
 
-def search_videos(search):
-    # Disable OAuthlib's HTTPS verification when running locally.
-    # *DO NOT* leave this option enabled in production.
+def search_videos(args):
+
+    pageToken = None
+    search = None
+    if 'search' in args:
+        search = args['search']
+    if 'pageToke' in args:
+        pageToken = args['pageToken'] 
     os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
     api_service_name = "youtube"
@@ -20,7 +25,8 @@ def search_videos(search):
         part="snippet",
         q=search,
         fields="items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,nextPageToken,prevPageToken",
-        type="video"
+        type="video",
+        pageToken=
     )
 
     response = request.execute()

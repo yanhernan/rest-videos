@@ -6,8 +6,5 @@ from youtube import search_videos
 class VideosApi(Resource):
 
     def get(self, *args, **kwargs):
-        search = ''
-        if 'search' in request.args:
-            search = request.args['search']
-        videos = search_videos(search)
+        videos = search_videos(request.args)
         return response_json(videos, 200)
