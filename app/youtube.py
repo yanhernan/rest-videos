@@ -24,7 +24,7 @@ def search_videos(args):
     request = youtube.search().list(
         part="snippet",
         q=search,
-        fields="items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,nextPageToken,prevPageToken",
+        fields="items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,nextPageToken,prevPageToken,nextPageToken,prevPageToken,pageInfo",
         type="video",
         pageToken=pageToken
     )
